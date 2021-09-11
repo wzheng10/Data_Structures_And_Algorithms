@@ -17,8 +17,17 @@ public class Main {
 //	intArray[7] = 35;  Will get Error Index 7 out of bounds for length 7
 
 
+//        for (int i = 0; i < intArray.length; i++) {
+//            System.out.println(intArray[i]);
+
+        int index = -1;
         for (int i = 0; i < intArray.length; i++) {
-            System.out.println(intArray[i]);
+            if(intArray[i] == 7) {
+                index = i;
+                break;
+            }
         }
+
+        System.out.println("index = " + index);
     }
 }
