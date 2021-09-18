@@ -7,7 +7,11 @@ public class Main {
 
         mergeSort(intArray, 0, intArray.length);
 
-        for (int i = intArray.length - 1; i >=0; i--) {
+    // One way to reverse order, but does not change the sort order within the sort
+//        for (int i = intArray.length - 1; i >=0; i--) {
+//            System.out.println(intArray[i]);
+
+        for (int i = 0; i < intArray.length; i++) {
             System.out.println(intArray[i]);
         }
     }
@@ -25,8 +29,8 @@ public class Main {
     }
 
     public static void merge(int[] input, int start, int mid, int end) {
-
-        if (input[mid - 1] <= input[mid]) {
+        // change the comparison from <=to >=
+        if (input[mid - 1] >= input[mid]) {
             return;
         }
 
@@ -36,7 +40,8 @@ public class Main {
 
         int[] temp = new int[end - start];
         while (i < mid && j < end) {
-            temp[tempIndex++] = input[i] <= input[j] ? input[i++] : input[j++];
+            // change the comparison from <=to >=
+            temp[tempIndex++] = input[i] >= input[j] ? input[i++] : input[j++];
         }
 
         System.arraycopy(input, i, input, start + tempIndex, mid - i);
@@ -46,4 +51,5 @@ public class Main {
     }
 
 }
+
 
