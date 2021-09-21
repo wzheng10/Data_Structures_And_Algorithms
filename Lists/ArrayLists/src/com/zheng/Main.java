@@ -39,6 +39,8 @@ public class Main {
             System.out.println(employee);
         }
 
-        System.out.println(employeeList.contains (new Employee("Mary", "Smith", 22)));
+        //will require an equals method
+        System.out.println(employeeList.contains(new Employee("Mary", "Smith", 22)));
+        System.out.println(employeeList.indexOf(new Employee("John1", "Doe1", 4567)));
     }
 }

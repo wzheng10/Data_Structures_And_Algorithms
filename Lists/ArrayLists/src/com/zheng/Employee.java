@@ -1,5 +1,7 @@
 package com.zheng;
 
+import java.util.Objects;
+
 public class Employee {
 
     private String firstname;
@@ -35,6 +37,19 @@ public class Employee {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return getId() == employee.getId() && getFirstname().equals(employee.getFirstname()) && getLastname().equals(employee.getLastname());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getFirstname(), getLastname(), getId());
     }
 
     @Override
