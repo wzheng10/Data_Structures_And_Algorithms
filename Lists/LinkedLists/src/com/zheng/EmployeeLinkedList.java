@@ -21,6 +21,18 @@ public class EmployeeLinkedList {
         return head == null;
     }
 
+    public EmployeeNode removeFromFront() {
+        if(isEmpty()) {
+            return null;
+        }
+
+        EmployeeNode removedNode = head;
+        head = head.getNext();
+        size--;
+        return removedNode;
+
+    }
+
     public void printList() {
         EmployeeNode current = head;
         System.out.print("Head -> ");

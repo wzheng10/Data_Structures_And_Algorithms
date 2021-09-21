@@ -26,5 +26,11 @@ public class Main {
         System.out.println(list.getSize()); //4
         list.printList();
         System.out.println(list.isEmpty()); //false
+
+        System.out.println("============================================");
+
+        list.removeFromFront();
+        System.out.println(list.getSize());
+        list.printList();
     }
 }
