@@ -14,12 +14,17 @@ public class Main {
         Employee mikeWilson = new Employee("Mike", "Wilson", 3245);
 
         EmployeeLinkedList list = new EmployeeLinkedList();
+
+        System.out.println(list.isEmpty()); //true
+
         list.addToFront(janeJones);
         list.addToFront(johnDoe);
         list.addToFront(marySmith);
         list.addToFront(mikeWilson);
 
 //        System.out.println(list); cannot print the list like this
+        System.out.println(list.getSize()); //4
         list.printList();
+        System.out.println(list.isEmpty()); //false
     }
 }
