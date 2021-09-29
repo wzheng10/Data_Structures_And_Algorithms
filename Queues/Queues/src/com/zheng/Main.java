@@ -16,21 +16,21 @@ public class Main {
         queue.add(mikeWilson);
         queue.add(billEnd);
         queue.printQueue();
+        System.out.println("================");
 
         queue.remove();
         queue.remove();
         queue.printQueue();
 
+        System.out.println("================");
         System.out.println(queue.peek());
         queue.remove();
         queue.remove();
         queue.remove();
-//        queue.remove();
 
         System.out.println("==========================");
         queue.add(mikeWilson);
-//
-//
+
         queue.printQueue();
     }
 }
