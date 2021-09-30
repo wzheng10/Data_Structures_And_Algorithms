@@ -31,6 +31,8 @@ public class Main {
         }
         while (!stack.isEmpty()) {
             if (!stack.pop().equals(queue.removeFirst())){
+                //the pop will remove from the end of the stack(LIFO), whereas the removeFirst in a queue will remove the first element in the queue(FIFO)
+                //using the .equals to compare the the stack and queue, we can determine if this is a palindrome
                 return false;
             }
         }
