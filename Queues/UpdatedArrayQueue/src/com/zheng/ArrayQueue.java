@@ -15,9 +15,16 @@ public class ArrayQueue {
     public void add(Employee employee) {
 
         if (back == queue.length - 1) {
+            int numItems = size();
             Employee[] newArray = new Employee[2 * queue.length];
-            System.arraycopy(queue, 0, newArray, 0, queue.length);
+
+            System.arraycopy(queue, front, newArray, 0, queue.length - front);
+            System.arraycopy(queue, 0, newArray, queue.length - front, back);
+
             queue = newArray;
+
+            front = 0;
+            back = numItems;
         }
 
         queue[back] = employee;
@@ -38,8 +45,11 @@ public class ArrayQueue {
         if(size() == 0) {
             front = 0;
             back = 0;
-        }
+        } else if (front == queue.length)
+        front = 0;
+        {
 
+        }
         return employee;
     }
     public Employee peek() {
