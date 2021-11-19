@@ -44,9 +44,18 @@ public class SimpleHashtable {
             return null;
         }
 
+
         Employee employee = hashtable[hashedKey].employee;
         hashtable[hashedKey] = null;
+        StoredEmployee[] oldHashtable = hashtable;
+        hashtable = new StoredEmployee[oldHashtable.length];
+        for (int i = 0; i < oldHashtable.length; i++) {         //new rehashed table
+            if (oldHashtable[i] != null) {
+                put(oldHashtable[i].key, oldHashtable[i].employee);
+            }
+        }
         return employee;
+                                                                //Mary should now be in position 5 after removing Jones and Wilson
     }
 
     private int hashKey(String key) {
@@ -71,10 +80,12 @@ public class SimpleHashtable {
             hashedKey = (hashedKey + 1) % hashtable.length;
         }
 
-        if (stopIndex == hashedKey) {
-            return -1;
-        } else {
+        if (hashtable[hashedKey] != null && hashtable[hashedKey].key.equals(key)) {
             return hashedKey;
+        }
+
+        else {
+            return -1;
         }
     }
 

@@ -16,13 +16,17 @@ public class Main {
 	ht.put("Smith", marySmith);
 //	ht.put("End", billEnd);
 
-	ht.printHashtable();
+//	ht.printHashtable();
 
 	System.out.println("retrieve key Wilson: " + ht.get("Wilson"));
 	System.out.println("retrieve key Smith: " + ht.get("Smith") );
 
 	ht.remove("Wilson");
 	ht.remove("Jones");
+	ht.printHashtable();
+		System.out.println("==================================");
+
+	System.out.println("retrieve key Smith: " + ht.get("Smith") );
 	ht.printHashtable();
     }
 }
